@@ -72,7 +72,7 @@ class DQN:
         # epsilon greedy
         if random.uniform(0, 1) > self.epsilon:
             observation = observation[np.newaxis, :]
-            actions_value = self.model1.predict(observation)
+            actions_value = self.model2.predict(observation)
             action = np.argmax(actions_value)
         else:
             action = random.randint(0, self.n_actions - 1)
